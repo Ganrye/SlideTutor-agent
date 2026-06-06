@@ -1,0 +1,414 @@
+﻿[
+    {
+        "element_id":  "e_s2_core",
+        "slide_id":  "s002",
+        "type":  "text",
+        "content":  "核心思想：微积分是一门研究“变化”的科学。",
+        "bbox":  {
+                     "x":  0.135,
+                     "y":  0.232,
+                     "width":  0.771,
+                     "height":  0.111
+                 },
+        "semantic_role":  "核心定义",
+        "functional_purpose":  "给出微积分总体定义",
+        "relation_to_slide":  "支撑本页核心信息",
+        "importance":  "high",
+        "related_concepts":  [
+                                 "k_change"
+                             ],
+        "action_affordance":  [
+                                  "highlight",
+                                  "annotate"
+                              ],
+        "source_ref":  {
+                           "source_file":  "微积分入门教学.pptx",
+                           "slide_id":  "s002",
+                           "slide_index":  2,
+                           "element_id":  "e_s2_core",
+                           "page_region":  "upper_middle"
+                       },
+        "evidence":  [
+                         {
+                             "type":  "text",
+                             "source_id":  "e_s2_core",
+                             "quote":  "研究“变化”的科学",
+                             "note":  "定义关键短语"
+                         }
+                     ],
+        "confidence":  0.96,
+        "needs_review":  false
+    },
+    {
+        "element_id":  "e_s2_questions",
+        "slide_id":  "s002",
+        "type":  "text",
+        "content":  "核心问题：变化有多快？变化累积了多少？",
+        "bbox":  {
+                     "x":  0.531,
+                     "y":  0.435,
+                     "width":  0.385,
+                     "height":  0.185
+                 },
+        "semantic_role":  "问题框架",
+        "functional_purpose":  "把微积分拆成微分和积分两个问题",
+        "relation_to_slide":  "连接定义与分支",
+        "importance":  "high",
+        "related_concepts":  [
+                                 "k_differential",
+                                 "k_integral"
+                             ],
+        "action_affordance":  [
+                                  "highlight",
+                                  "step_reveal",
+                                  "compare"
+                              ],
+        "source_ref":  {
+                           "source_file":  "微积分入门教学.pptx",
+                           "slide_id":  "s002",
+                           "slide_index":  2,
+                           "element_id":  "e_s2_questions",
+                           "page_region":  "middle_right"
+                       },
+        "evidence":  [
+                         {
+                             "type":  "text",
+                             "source_id":  "e_s2_questions",
+                             "quote":  "变化有多快？变化累积了多少？",
+                             "note":  "核心问题"
+                         }
+                     ],
+        "confidence":  0.96,
+        "needs_review":  false
+    },
+    {
+        "element_id":  "e_s3_diff",
+        "slide_id":  "s003",
+        "type":  "text",
+        "content":  "微分学研究函数的局部变化率，核心概念是导数。",
+        "bbox":  {
+                     "x":  0.083,
+                     "y":  0.481,
+                     "width":  0.385,
+                     "height":  0.389
+                 },
+        "semantic_role":  "分支说明",
+        "functional_purpose":  "定义微分学研究对象",
+        "relation_to_slide":  "与积分学形成对比",
+        "importance":  "high",
+        "related_concepts":  [
+                                 "k_differential",
+                                 "k_derivative"
+                             ],
+        "action_affordance":  [
+                                  "highlight",
+                                  "mask",
+                                  "compare"
+                              ],
+        "source_ref":  {
+                           "source_file":  "微积分入门教学.pptx",
+                           "slide_id":  "s003",
+                           "slide_index":  3,
+                           "element_id":  "e_s3_diff",
+                           "page_region":  "left_body"
+                       },
+        "evidence":  [
+                         {
+                             "type":  "text",
+                             "source_id":  "e_s3_diff",
+                             "quote":  "函数的局部变化率",
+                             "note":  "微分学研究对象"
+                         }
+                     ],
+        "confidence":  0.94,
+        "needs_review":  false
+    },
+    {
+        "element_id":  "e_s3_integral",
+        "slide_id":  "s003",
+        "type":  "text",
+        "content":  "积分学研究函数的累积效应，核心概念是积分。",
+        "bbox":  {
+                     "x":  0.531,
+                     "y":  0.481,
+                     "width":  0.385,
+                     "height":  0.389
+                 },
+        "semantic_role":  "分支说明",
+        "functional_purpose":  "定义积分学研究对象",
+        "relation_to_slide":  "与微分学形成对比",
+        "importance":  "high",
+        "related_concepts":  [
+                                 "k_integral"
+                             ],
+        "action_affordance":  [
+                                  "highlight",
+                                  "mask",
+                                  "compare"
+                              ],
+        "source_ref":  {
+                           "source_file":  "微积分入门教学.pptx",
+                           "slide_id":  "s003",
+                           "slide_index":  3,
+                           "element_id":  "e_s3_integral",
+                           "page_region":  "right_body"
+                       },
+        "evidence":  [
+                         {
+                             "type":  "text",
+                             "source_id":  "e_s3_integral",
+                             "quote":  "函数的累积效应",
+                             "note":  "积分学研究对象"
+                         }
+                     ],
+        "confidence":  0.94,
+        "needs_review":  false
+    },
+    {
+        "element_id":  "e_s4_derivative",
+        "slide_id":  "s004",
+        "type":  "text",
+        "content":  "导数就是瞬时变化率，它精确刻画某一瞬间的变化状态。",
+        "bbox":  {
+                     "x":  0.083,
+                     "y":  0.426,
+                     "width":  0.229,
+                     "height":  0.444
+                 },
+        "semantic_role":  "核心定义",
+        "functional_purpose":  "解释导数直观含义",
+        "relation_to_slide":  "支撑微分页核心信息",
+        "importance":  "high",
+        "related_concepts":  [
+                                 "k_derivative"
+                             ],
+        "action_affordance":  [
+                                  "highlight",
+                                  "annotate"
+                              ],
+        "source_ref":  {
+                           "source_file":  "微积分入门教学.pptx",
+                           "slide_id":  "s004",
+                           "slide_index":  4,
+                           "element_id":  "e_s4_derivative",
+                           "page_region":  "left_body"
+                       },
+        "evidence":  [
+                         {
+                             "type":  "text",
+                             "source_id":  "e_s4_derivative",
+                             "quote":  "导数就是瞬时变化率",
+                             "note":  "核心定义"
+                         }
+                     ],
+        "confidence":  0.96,
+        "needs_review":  false
+    },
+    {
+        "element_id":  "e_s4_tangent",
+        "slide_id":  "s004",
+        "type":  "text",
+        "content":  "切线的斜率 = 该点的导数。",
+        "bbox":  {
+                     "x":  0.38,
+                     "y":  0.537,
+                     "width":  0.24,
+                     "height":  0.352
+                 },
+        "semantic_role":  "几何解释",
+        "functional_purpose":  "用切线斜率解释导数",
+        "relation_to_slide":  "把瞬时变化率转成几何直觉",
+        "importance":  "high",
+        "related_concepts":  [
+                                 "k_derivative",
+                                 "k_tangent_slope"
+                             ],
+        "action_affordance":  [
+                                  "highlight",
+                                  "annotate",
+                                  "zoom"
+                              ],
+        "source_ref":  {
+                           "source_file":  "微积分入门教学.pptx",
+                           "slide_id":  "s004",
+                           "slide_index":  4,
+                           "element_id":  "e_s4_tangent",
+                           "page_region":  "middle_body"
+                       },
+        "evidence":  [
+                         {
+                             "type":  "text",
+                             "source_id":  "e_s4_tangent",
+                             "quote":  "切线的斜率 = 该点的导数",
+                             "note":  "几何意义"
+                         }
+                     ],
+        "confidence":  0.95,
+        "needs_review":  false
+    },
+    {
+        "element_id":  "e_s5_process",
+        "slide_id":  "s005",
+        "type":  "text",
+        "content":  "分割、近似、求和、取极限。这个无限求和的极限过程，就是积分。",
+        "bbox":  {
+                     "x":  0.083,
+                     "y":  0.63,
+                     "width":  0.385,
+                     "height":  0.278
+                 },
+        "semantic_role":  "过程说明",
+        "functional_purpose":  "解释积分的构造过程",
+        "relation_to_slide":  "支撑积分直观理解",
+        "importance":  "high",
+        "related_concepts":  [
+                                 "k_integral",
+                                 "k_limit_sum"
+                             ],
+        "action_affordance":  [
+                                  "step_reveal",
+                                  "highlight"
+                              ],
+        "source_ref":  {
+                           "source_file":  "微积分入门教学.pptx",
+                           "slide_id":  "s005",
+                           "slide_index":  5,
+                           "element_id":  "e_s5_process",
+                           "page_region":  "left_body"
+                       },
+        "evidence":  [
+                         {
+                             "type":  "text",
+                             "source_id":  "e_s5_process",
+                             "quote":  "分割、近似、求和、取极限",
+                             "note":  "积分过程"
+                         }
+                     ],
+        "confidence":  0.95,
+        "needs_review":  false
+    },
+    {
+        "element_id":  "e_s5_displacement",
+        "slide_id":  "s005",
+        "type":  "text",
+        "content":  "速度函数 v(t) 下从 a 到 b 的面积，就是这段时间内的总位移。",
+        "bbox":  {
+                     "x":  0.531,
+                     "y":  0.63,
+                     "width":  0.385,
+                     "height":  0.259
+                 },
+        "semantic_role":  "物理意义",
+        "functional_purpose":  "用速度到位移说明积分应用",
+        "relation_to_slide":  "支撑积分的累积含义",
+        "importance":  "high",
+        "related_concepts":  [
+                                 "k_integral",
+                                 "k_displacement"
+                             ],
+        "action_affordance":  [
+                                  "highlight",
+                                  "annotate"
+                              ],
+        "source_ref":  {
+                           "source_file":  "微积分入门教学.pptx",
+                           "slide_id":  "s005",
+                           "slide_index":  5,
+                           "element_id":  "e_s5_displacement",
+                           "page_region":  "right_body"
+                       },
+        "evidence":  [
+                         {
+                             "type":  "text",
+                             "source_id":  "e_s5_displacement",
+                             "quote":  "曲线下、从 a 到 b 的面积，就是物体在这段时间内的总位移",
+                             "note":  "物理意义"
+                         }
+                     ],
+        "confidence":  0.94,
+        "needs_review":  false
+    },
+    {
+        "element_id":  "e_s6_core",
+        "slide_id":  "s006",
+        "type":  "formula",
+        "content":  "微分和积分是互逆运算。若 F\u0027(x)=f(x)，则 ∫f(x)dx = F(x)+C。",
+        "bbox":  {
+                     "x":  0.146,
+                     "y":  0.213,
+                     "width":  0.771,
+                     "height":  0.167
+                 },
+        "semantic_role":  "核心公式与结论",
+        "functional_purpose":  "给出基本定理核心思想",
+        "relation_to_slide":  "支撑页面中心命题",
+        "importance":  "high",
+        "related_concepts":  [
+                                 "k_fundamental_theorem",
+                                 "k_inverse_relation"
+                             ],
+        "action_affordance":  [
+                                  "highlight",
+                                  "annotate",
+                                  "zoom"
+                              ],
+        "source_ref":  {
+                           "source_file":  "微积分入门教学.pptx",
+                           "slide_id":  "s006",
+                           "slide_index":  6,
+                           "element_id":  "e_s6_core",
+                           "page_region":  "upper_middle"
+                       },
+        "evidence":  [
+                         {
+                             "type":  "text",
+                             "source_id":  "e_s6_core",
+                             "quote":  "微分和积分是互逆运算",
+                             "note":  "核心结论"
+                         }
+                     ],
+        "confidence":  0.93,
+        "needs_review":  false
+    },
+    {
+        "element_id":  "e_s6_quote",
+        "slide_id":  "s006",
+        "type":  "text",
+        "content":  "变化率的累积，等于总变化量。",
+        "bbox":  {
+                     "x":  0.063,
+                     "y":  0.787,
+                     "width":  0.875,
+                     "height":  0.111
+                 },
+        "semantic_role":  "总结句",
+        "functional_purpose":  "收束基本定理",
+        "relation_to_slide":  "总结微分与积分关系",
+        "importance":  "high",
+        "related_concepts":  [
+                                 "k_fundamental_theorem",
+                                 "k_inverse_relation"
+                             ],
+        "action_affordance":  [
+                                  "highlight",
+                                  "annotate"
+                              ],
+        "source_ref":  {
+                           "source_file":  "微积分入门教学.pptx",
+                           "slide_id":  "s006",
+                           "slide_index":  6,
+                           "element_id":  "e_s6_quote",
+                           "page_region":  "bottom"
+                       },
+        "evidence":  [
+                         {
+                             "type":  "text",
+                             "source_id":  "e_s6_quote",
+                             "quote":  "变化率的累积，等于总变化量",
+                             "note":  "总结句"
+                         }
+                     ],
+        "confidence":  0.95,
+        "needs_review":  false
+    }
+]

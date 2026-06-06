@@ -1,0 +1,70 @@
+# Dependencies
+node_modules/
+**/node_modules/
+
+# Build output and caches
+dist/
+**/dist/
+dist-ssr/
+**/.vite/
+*.tsbuildinfo
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# Local environment
+.env
+.env.*
+!.env.example
+*.local
+
+# Editor and OS files
+.vscode/*
+!.vscode/extensions.json
+.idea/
+.DS_Store
+Thumbs.db
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# Generated document conversion folders
+*_mineru_work/
+**/*_mineru_work/
+
+# Paper extraction image dumps
+slideAgent_paper/images/
+GenerativeLecture/images/
+
+# Large source documents and archive dumps should stay outside the repo unless explicitly needed.
+*.pdf
+*.ppt
+*.pptx
+*.doc
+*.docx
+*.zip
+*.7z
+*.rar
+
+# Raster exports and extracted figures. App assets are explicitly allowed below.
+*.png
+*.jpg
+*.jpeg
+*.webp
+*.gif
+*.bmp
+*.tif
+*.tiff
+
+# Keep deliberate frontend demo/static assets visible to Git.
+!apps/web/public/
+!apps/web/public/**
+!apps/web/src/assets/
+!apps/web/src/assets/**

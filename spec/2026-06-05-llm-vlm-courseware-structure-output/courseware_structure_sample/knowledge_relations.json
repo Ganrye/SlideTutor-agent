@@ -1,0 +1,220 @@
+﻿[
+    {
+        "relation_id":  "r001",
+        "source_id":  "k_change",
+        "target_id":  "k_differential",
+        "relation_type":  "part_of",
+        "description":  "微分学回答变化有多快。",
+        "source_slides":  [
+                              "s002",
+                              "s003"
+                          ],
+        "source_elements":  [
+                                "e_s2_questions",
+                                "e_s3_diff"
+                            ],
+        "evidence":  [
+                         {
+                             "type":  "text",
+                             "source_id":  "e_s2_questions",
+                             "quote":  "变化有多快？",
+                             "note":  "对应微分"
+                         }
+                     ],
+        "confidence":  0.91,
+        "needs_review":  false
+    },
+    {
+        "relation_id":  "r002",
+        "source_id":  "k_change",
+        "target_id":  "k_integral",
+        "relation_type":  "part_of",
+        "description":  "积分学回答变化累积了多少。",
+        "source_slides":  [
+                              "s002",
+                              "s003"
+                          ],
+        "source_elements":  [
+                                "e_s2_questions",
+                                "e_s3_integral"
+                            ],
+        "evidence":  [
+                         {
+                             "type":  "text",
+                             "source_id":  "e_s2_questions",
+                             "quote":  "变化累积了多少？",
+                             "note":  "对应积分"
+                         }
+                     ],
+        "confidence":  0.91,
+        "needs_review":  false
+    },
+    {
+        "relation_id":  "r003",
+        "source_id":  "k_differential",
+        "target_id":  "k_derivative",
+        "relation_type":  "explains",
+        "description":  "导数是微分学的核心概念。",
+        "source_slides":  [
+                              "s003",
+                              "s004"
+                          ],
+        "source_elements":  [
+                                "e_s3_diff",
+                                "e_s4_derivative"
+                            ],
+        "evidence":  [
+                         {
+                             "type":  "text",
+                             "source_id":  "e_s3_diff",
+                             "quote":  "核心概念：导数",
+                             "note":  "分支到概念"
+                         }
+                     ],
+        "confidence":  0.93,
+        "needs_review":  false
+    },
+    {
+        "relation_id":  "r004",
+        "source_id":  "k_derivative",
+        "target_id":  "k_tangent_slope",
+        "relation_type":  "explains",
+        "description":  "切线斜率解释导数的几何意义。",
+        "source_slides":  [
+                              "s004"
+                          ],
+        "source_elements":  [
+                                "e_s4_tangent"
+                            ],
+        "evidence":  [
+                         {
+                             "type":  "text",
+                             "source_id":  "e_s4_tangent",
+                             "quote":  "切线的斜率 = 该点的导数",
+                             "note":  "几何意义"
+                         }
+                     ],
+        "confidence":  0.94,
+        "needs_review":  false
+    },
+    {
+        "relation_id":  "r005",
+        "source_id":  "k_integral",
+        "target_id":  "k_limit_sum",
+        "relation_type":  "explains",
+        "description":  "分割、近似、求和、取极限解释积分如何形成。",
+        "source_slides":  [
+                              "s005"
+                          ],
+        "source_elements":  [
+                                "e_s5_process"
+                            ],
+        "evidence":  [
+                         {
+                             "type":  "text",
+                             "source_id":  "e_s5_process",
+                             "quote":  "分割、近似、求和、取极限",
+                             "note":  "积分过程"
+                         }
+                     ],
+        "confidence":  0.94,
+        "needs_review":  false
+    },
+    {
+        "relation_id":  "r006",
+        "source_id":  "k_integral",
+        "target_id":  "k_displacement",
+        "relation_type":  "applies_to",
+        "description":  "积分应用到速度函数时，曲线下面积表示位移。",
+        "source_slides":  [
+                              "s005"
+                          ],
+        "source_elements":  [
+                                "e_s5_displacement"
+                            ],
+        "evidence":  [
+                         {
+                             "type":  "text",
+                             "source_id":  "e_s5_displacement",
+                             "quote":  "总位移",
+                             "note":  "应用"
+                         }
+                     ],
+        "confidence":  0.93,
+        "needs_review":  false
+    },
+    {
+        "relation_id":  "r007",
+        "source_id":  "k_derivative",
+        "target_id":  "k_fundamental_theorem",
+        "relation_type":  "prerequisite_of",
+        "description":  "理解导数是理解基本定理的前提之一。",
+        "source_slides":  [
+                              "s004",
+                              "s006"
+                          ],
+        "source_elements":  [
+                                "e_s4_derivative",
+                                "e_s6_core"
+                            ],
+        "evidence":  [
+                         {
+                             "type":  "relation",
+                             "source_id":  "e_s6_core",
+                             "quote":  "F\u0027(x)=f(x)",
+                             "note":  "基本定理使用导数关系"
+                         }
+                     ],
+        "confidence":  0.88,
+        "needs_review":  false
+    },
+    {
+        "relation_id":  "r008",
+        "source_id":  "k_integral",
+        "target_id":  "k_fundamental_theorem",
+        "relation_type":  "prerequisite_of",
+        "description":  "理解积分是理解基本定理的前提之一。",
+        "source_slides":  [
+                              "s005",
+                              "s006"
+                          ],
+        "source_elements":  [
+                                "e_s5_process",
+                                "e_s6_core"
+                            ],
+        "evidence":  [
+                         {
+                             "type":  "relation",
+                             "source_id":  "e_s6_core",
+                             "quote":  "∫f(x)dx = F(x)+C",
+                             "note":  "基本定理使用积分关系"
+                         }
+                     ],
+        "confidence":  0.88,
+        "needs_review":  false
+    },
+    {
+        "relation_id":  "r009",
+        "source_id":  "k_fundamental_theorem",
+        "target_id":  "k_inverse_relation",
+        "relation_type":  "summarizes",
+        "description":  "基本定理总结微分和积分互逆。",
+        "source_slides":  [
+                              "s006"
+                          ],
+        "source_elements":  [
+                                "e_s6_core",
+                                "e_s6_quote"
+                            ],
+        "evidence":  [
+                         {
+                             "type":  "text",
+                             "source_id":  "e_s6_core",
+                             "quote":  "互逆运算",
+                             "note":  "互逆关系"
+                         }
+                     ],
+        "confidence":  0.92,
+        "needs_review":  false
+    }
+]

@@ -1,0 +1,283 @@
+﻿[
+    {
+        "node_id":  "k_change",
+        "type":  "concept",
+        "title":  "变化",
+        "description":  "微积分研究的总体对象。",
+        "difficulty":  "low",
+        "source_slides":  [
+                              "s002"
+                          ],
+        "source_elements":  [
+                                "e_s2_core"
+                            ],
+        "prerequisites":  [
+                              "函数"
+                          ],
+        "common_confusions":  [
+                                  "把微积分理解为公式计算而忽略变化视角"
+                              ],
+        "teaching_notes":  "先用动态世界建立动机。",
+        "evidence":  [
+                         {
+                             "type":  "text",
+                             "source_id":  "e_s2_core",
+                             "quote":  "研究“变化”的科学",
+                             "note":  "定义"
+                         }
+                     ],
+        "confidence":  0.94,
+        "needs_review":  false
+    },
+    {
+        "node_id":  "k_differential",
+        "type":  "concept",
+        "title":  "微分学",
+        "description":  "研究函数局部变化率，即变化有多快。",
+        "difficulty":  "medium",
+        "source_slides":  [
+                              "s002",
+                              "s003"
+                          ],
+        "source_elements":  [
+                                "e_s2_questions",
+                                "e_s3_diff"
+                            ],
+        "prerequisites":  [
+                              "k_change"
+                          ],
+        "common_confusions":  [
+                                  "混淆平均变化率和瞬时变化率"
+                              ],
+        "teaching_notes":  "与积分学并列讲解。",
+        "evidence":  [
+                         {
+                             "type":  "text",
+                             "source_id":  "e_s3_diff",
+                             "quote":  "函数的局部变化率",
+                             "note":  "分支定义"
+                         }
+                     ],
+        "confidence":  0.93,
+        "needs_review":  false
+    },
+    {
+        "node_id":  "k_derivative",
+        "type":  "concept",
+        "title":  "导数",
+        "description":  "刻画函数在某一点的瞬时变化率。",
+        "difficulty":  "medium",
+        "source_slides":  [
+                              "s003",
+                              "s004"
+                          ],
+        "source_elements":  [
+                                "e_s3_diff",
+                                "e_s4_derivative"
+                            ],
+        "prerequisites":  [
+                              "k_differential"
+                          ],
+        "common_confusions":  [
+                                  "只记求导法则，不理解变化率含义"
+                              ],
+        "teaching_notes":  "从平均速度过渡到瞬时速度。",
+        "evidence":  [
+                         {
+                             "type":  "text",
+                             "source_id":  "e_s4_derivative",
+                             "quote":  "导数就是瞬时变化率",
+                             "note":  "定义"
+                         }
+                     ],
+        "confidence":  0.95,
+        "needs_review":  false
+    },
+    {
+        "node_id":  "k_tangent_slope",
+        "type":  "concept",
+        "title":  "切线斜率",
+        "description":  "导数的几何意义。",
+        "difficulty":  "medium",
+        "source_slides":  [
+                              "s004"
+                          ],
+        "source_elements":  [
+                                "e_s4_tangent"
+                            ],
+        "prerequisites":  [
+                              "k_derivative"
+                          ],
+        "common_confusions":  [
+                                  "不理解割线到切线的极限过程"
+                              ],
+        "teaching_notes":  "适合标注图像或公式。",
+        "evidence":  [
+                         {
+                             "type":  "text",
+                             "source_id":  "e_s4_tangent",
+                             "quote":  "切线的斜率 = 该点的导数",
+                             "note":  "几何意义"
+                         }
+                     ],
+        "confidence":  0.94,
+        "needs_review":  false
+    },
+    {
+        "node_id":  "k_integral",
+        "type":  "concept",
+        "title":  "积分",
+        "description":  "刻画累积总量，回答变化累积了多少。",
+        "difficulty":  "medium",
+        "source_slides":  [
+                              "s002",
+                              "s003",
+                              "s005"
+                          ],
+        "source_elements":  [
+                                "e_s2_questions",
+                                "e_s3_integral",
+                                "e_s5_process"
+                            ],
+        "prerequisites":  [
+                              "k_change"
+                          ],
+        "common_confusions":  [
+                                  "只把积分理解成面积公式"
+                              ],
+        "teaching_notes":  "先讲面积分割，再讲速度到位移。",
+        "evidence":  [
+                         {
+                             "type":  "text",
+                             "source_id":  "e_s5_process",
+                             "quote":  "无限求和的极限过程，就是积分",
+                             "note":  "积分直观定义"
+                         }
+                     ],
+        "confidence":  0.94,
+        "needs_review":  false
+    },
+    {
+        "node_id":  "k_limit_sum",
+        "type":  "procedure",
+        "title":  "分割、近似、求和、取极限",
+        "description":  "积分的直观构造过程。",
+        "difficulty":  "medium",
+        "source_slides":  [
+                              "s005"
+                          ],
+        "source_elements":  [
+                                "e_s5_process"
+                            ],
+        "prerequisites":  [
+                              "k_integral"
+                          ],
+        "common_confusions":  [
+                                  "停留在求和，忽略取极限"
+                              ],
+        "teaching_notes":  "适合 step_reveal。",
+        "evidence":  [
+                         {
+                             "type":  "text",
+                             "source_id":  "e_s5_process",
+                             "quote":  "分割、近似、求和、取极限",
+                             "note":  "过程"
+                         }
+                     ],
+        "confidence":  0.95,
+        "needs_review":  false
+    },
+    {
+        "node_id":  "k_displacement",
+        "type":  "application",
+        "title":  "速度积分得到位移",
+        "description":  "速度-时间曲线下的面积表示总位移。",
+        "difficulty":  "medium",
+        "source_slides":  [
+                              "s005"
+                          ],
+        "source_elements":  [
+                                "e_s5_displacement"
+                            ],
+        "prerequisites":  [
+                              "k_integral"
+                          ],
+        "common_confusions":  [
+                                  "不理解面积和位移的对应"
+                              ],
+        "teaching_notes":  "作为积分物理意义例子。",
+        "evidence":  [
+                         {
+                             "type":  "text",
+                             "source_id":  "e_s5_displacement",
+                             "quote":  "总位移",
+                             "note":  "应用"
+                         }
+                     ],
+        "confidence":  0.93,
+        "needs_review":  false
+    },
+    {
+        "node_id":  "k_fundamental_theorem",
+        "type":  "theorem",
+        "title":  "微积分基本定理",
+        "description":  "说明微分和积分互逆，变化率的累积等于总变化量。",
+        "difficulty":  "high",
+        "source_slides":  [
+                              "s006"
+                          ],
+        "source_elements":  [
+                                "e_s6_core",
+                                "e_s6_quote"
+                            ],
+        "prerequisites":  [
+                              "k_derivative",
+                              "k_integral"
+                          ],
+        "common_confusions":  [
+                                  "背公式但不理解互逆关系"
+                              ],
+        "teaching_notes":  "在导数和积分直观建立后讲。",
+        "evidence":  [
+                         {
+                             "type":  "text",
+                             "source_id":  "e_s6_core",
+                             "quote":  "微分和积分是互逆运算",
+                             "note":  "核心思想"
+                         }
+                     ],
+        "confidence":  0.92,
+        "needs_review":  false
+    },
+    {
+        "node_id":  "k_inverse_relation",
+        "type":  "concept",
+        "title":  "微分与积分的互逆关系",
+        "description":  "从变化率可积出总变化，从累积函数可导回瞬时率。",
+        "difficulty":  "high",
+        "source_slides":  [
+                              "s006"
+                          ],
+        "source_elements":  [
+                                "e_s6_core",
+                                "e_s6_quote"
+                            ],
+        "prerequisites":  [
+                              "k_fundamental_theorem"
+                          ],
+        "common_confusions":  [
+                                  "不知道互逆关系有两个方向"
+                              ],
+        "teaching_notes":  "适合左右对比。",
+        "evidence":  [
+                         {
+                             "type":  "text",
+                             "source_id":  "e_s6_quote",
+                             "quote":  "变化率的累积，等于总变化量",
+                             "note":  "总结"
+                         }
+                     ],
+        "confidence":  0.92,
+        "needs_review":  false
+    }
+]
