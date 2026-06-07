@@ -22,6 +22,7 @@ lerna-debug.log*
 .env.*
 !.env.example
 *.local
+config/*.local.json
 
 # Editor and OS files
 .vscode/*
@@ -38,6 +39,10 @@ Thumbs.db
 # Generated document conversion folders
 *_mineru_work/
 **/*_mineru_work/
+
+# Generated LLM experiment outputs
+outputs/
+**/outputs/
 
 # Paper extraction image dumps
 slideAgent_paper/images/
