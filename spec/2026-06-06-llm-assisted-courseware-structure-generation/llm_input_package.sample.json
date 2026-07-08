@@ -1,0 +1,471 @@
+{
+  "package_id": "calculus_intro_llm_input_001",
+  "source_file": "微积分入门教学.pptx",
+  "source_type": "pptx",
+  "selected_slide_range": {
+    "start": 2,
+    "end": 6
+  },
+  "target_schema_version": "0.1",
+  "course_context": {
+    "audience": "微积分初学者或自学者",
+    "teaching_goal": "帮助学生建立微积分研究变化与累积的整体直觉。",
+    "prerequisites": [
+      "函数",
+      "平均速度",
+      "斜率",
+      "面积",
+      "求和"
+    ],
+    "teacher_notes": [
+      {
+        "note_id": "tn_course_001",
+        "text": "本轮只生成结构草案，不直接生成可执行 lesson.json。",
+        "source": "teacher_note"
+      }
+    ]
+  },
+  "slides": [
+    {
+      "slide_id": "s002",
+      "index": 2,
+      "title": {
+        "text": "什么是微积分？ —— 动态世界的语言",
+        "source": "parser"
+      },
+      "page_text": [
+        {
+          "source": "parser",
+          "text": "核心思想：微积分是一门研究“变化”的科学。",
+          "evidence_id": "txt_s002_001"
+        },
+        {
+          "source": "parser",
+          "text": "核心问题：变化有多快？变化累积了多少？",
+          "evidence_id": "txt_s002_002"
+        }
+      ],
+      "page_summary": {
+        "source": "human_summary",
+        "text": "本页用定义和两个核心问题引入微积分。"
+      },
+      "teacher_notes": [
+        {
+          "note_id": "tn_s002_001",
+          "text": "讲解时把两个核心问题分别引向微分和积分，但不要把教师解释写成课件原文。",
+          "source": "teacher_note"
+        }
+      ],
+      "parser_evidence": [
+        {
+          "evidence_id": "txt_s002_001",
+          "source_type": "parser_text",
+          "source_ref": {
+            "slide_id": "s002",
+            "slide_index": 2
+          }
+        },
+        {
+          "evidence_id": "txt_s002_002",
+          "source_type": "parser_text",
+          "source_ref": {
+            "slide_id": "s002",
+            "slide_index": 2
+          }
+        }
+      ]
+    },
+    {
+      "slide_id": "s003",
+      "index": 3,
+      "title": {
+        "text": "微积分的两大核心分支",
+        "source": "parser"
+      },
+      "page_text": [
+        {
+          "source": "parser",
+          "text": "微分学研究函数的局部变化率，核心概念是导数。",
+          "evidence_id": "txt_s003_001"
+        },
+        {
+          "source": "parser",
+          "text": "积分学研究函数的累积效应，核心概念是积分。",
+          "evidence_id": "txt_s003_002"
+        }
+      ],
+      "page_summary": {
+        "source": "human_summary",
+        "text": "本页左右对照微分学与积分学。"
+      },
+      "teacher_notes": [],
+      "parser_evidence": [
+        {
+          "evidence_id": "txt_s003_001",
+          "source_type": "parser_text",
+          "source_ref": {
+            "slide_id": "s003",
+            "slide_index": 3
+          }
+        },
+        {
+          "evidence_id": "txt_s003_002",
+          "source_type": "parser_text",
+          "source_ref": {
+            "slide_id": "s003",
+            "slide_index": 3
+          }
+        }
+      ]
+    },
+    {
+      "slide_id": "s004",
+      "index": 4,
+      "title": {
+        "text": "核心思想一：微分 —— 捕捉瞬间的变化",
+        "source": "parser"
+      },
+      "page_text": [
+        {
+          "source": "parser",
+          "text": "导数就是瞬时变化率，它精确刻画某一瞬间的变化状态。",
+          "evidence_id": "txt_s004_001"
+        },
+        {
+          "source": "parser",
+          "text": "切线的斜率 = 该点的导数。",
+          "evidence_id": "txt_s004_002"
+        }
+      ],
+      "page_summary": {
+        "source": "human_summary",
+        "text": "本页从瞬时变化率和切线斜率说明导数。"
+      },
+      "teacher_notes": [
+        {
+          "note_id": "tn_s004_001",
+          "text": "可以用平均速度到瞬时速度作为讲解过渡；这是教师讲法，不是页面原文。",
+          "source": "teacher_note"
+        }
+      ],
+      "parser_evidence": [
+        {
+          "evidence_id": "txt_s004_001",
+          "source_type": "parser_text",
+          "source_ref": {
+            "slide_id": "s004",
+            "slide_index": 4
+          }
+        },
+        {
+          "evidence_id": "txt_s004_002",
+          "source_type": "parser_text",
+          "source_ref": {
+            "slide_id": "s004",
+            "slide_index": 4
+          }
+        }
+      ]
+    },
+    {
+      "slide_id": "s005",
+      "index": 5,
+      "title": {
+        "text": "核心思想二：积分 —— 累积过程的总量",
+        "source": "parser"
+      },
+      "page_text": [
+        {
+          "source": "parser",
+          "text": "分割、近似、求和、取极限。这个无限求和的极限过程，就是积分。",
+          "evidence_id": "txt_s005_001"
+        },
+        {
+          "source": "parser",
+          "text": "速度函数 v(t) 下从 a 到 b 的面积，就是这段时间内的总位移。",
+          "evidence_id": "txt_s005_002"
+        }
+      ],
+      "page_summary": {
+        "source": "human_summary",
+        "text": "本页用面积分割过程和速度到位移说明积分的累积意义。"
+      },
+      "teacher_notes": [],
+      "parser_evidence": [
+        {
+          "evidence_id": "txt_s005_001",
+          "source_type": "parser_text",
+          "source_ref": {
+            "slide_id": "s005",
+            "slide_index": 5
+          }
+        },
+        {
+          "evidence_id": "txt_s005_002",
+          "source_type": "parser_text",
+          "source_ref": {
+            "slide_id": "s005",
+            "slide_index": 5
+          }
+        }
+      ]
+    },
+    {
+      "slide_id": "s006",
+      "index": 6,
+      "title": {
+        "text": "微积分的灵魂 —— 微积分基本定理",
+        "source": "parser"
+      },
+      "page_text": [
+        {
+          "source": "parser",
+          "text": "微分和积分是互逆运算。若 F'(x)=f(x)，则 ∫f(x)dx = F(x)+C。",
+          "evidence_id": "txt_s006_001"
+        },
+        {
+          "source": "parser",
+          "text": "变化率的累积，等于总变化量。",
+          "evidence_id": "txt_s006_002"
+        }
+      ],
+      "page_summary": {
+        "source": "human_summary",
+        "text": "本页用微积分基本定理收束导数和积分的互逆关系。"
+      },
+      "teacher_notes": [
+        {
+          "note_id": "tn_s006_001",
+          "text": "公式方向需要人工复核，避免把不定积分和定积分的教学边界混淆。",
+          "source": "teacher_note"
+        }
+      ],
+      "parser_evidence": [
+        {
+          "evidence_id": "txt_s006_001",
+          "source_type": "parser_text",
+          "source_ref": {
+            "slide_id": "s006",
+            "slide_index": 6
+          }
+        },
+        {
+          "evidence_id": "txt_s006_002",
+          "source_type": "parser_text",
+          "source_ref": {
+            "slide_id": "s006",
+            "slide_index": 6
+          }
+        }
+      ]
+    }
+  ],
+  "known_elements": [
+    {
+      "element_id": "e_s2_core",
+      "slide_id": "s002",
+      "type": "text",
+      "content": "核心思想：微积分是一门研究“变化”的科学。",
+      "bbox": {
+        "x": 0.135,
+        "y": 0.232,
+        "width": 0.771,
+        "height": 0.111
+      },
+      "source": "manual_from_parser",
+      "evidence_hint": "定义关键短语",
+      "allowed_action_affordance": [
+        "highlight",
+        "annotate"
+      ]
+    },
+    {
+      "element_id": "e_s2_questions",
+      "slide_id": "s002",
+      "type": "text",
+      "content": "核心问题：变化有多快？变化累积了多少？",
+      "bbox": {
+        "x": 0.531,
+        "y": 0.435,
+        "width": 0.385,
+        "height": 0.185
+      },
+      "source": "manual_from_parser",
+      "evidence_hint": "两个核心问题",
+      "allowed_action_affordance": [
+        "highlight",
+        "step_reveal",
+        "compare"
+      ]
+    },
+    {
+      "element_id": "e_s3_diff",
+      "slide_id": "s003",
+      "type": "text",
+      "content": "微分学研究函数的局部变化率，核心概念是导数。",
+      "bbox": {
+        "x": 0.083,
+        "y": 0.481,
+        "width": 0.385,
+        "height": 0.389
+      },
+      "source": "manual_from_parser",
+      "evidence_hint": "微分学定义",
+      "allowed_action_affordance": [
+        "highlight",
+        "mask",
+        "compare"
+      ]
+    },
+    {
+      "element_id": "e_s3_integral",
+      "slide_id": "s003",
+      "type": "text",
+      "content": "积分学研究函数的累积效应，核心概念是积分。",
+      "bbox": {
+        "x": 0.531,
+        "y": 0.481,
+        "width": 0.385,
+        "height": 0.389
+      },
+      "source": "manual_from_parser",
+      "evidence_hint": "积分学定义",
+      "allowed_action_affordance": [
+        "highlight",
+        "mask",
+        "compare"
+      ]
+    },
+    {
+      "element_id": "e_s4_derivative",
+      "slide_id": "s004",
+      "type": "text",
+      "content": "导数就是瞬时变化率，它精确刻画某一瞬间的变化状态。",
+      "bbox": {
+        "x": 0.083,
+        "y": 0.426,
+        "width": 0.229,
+        "height": 0.444
+      },
+      "source": "manual_from_parser",
+      "evidence_hint": "导数定义",
+      "allowed_action_affordance": [
+        "highlight",
+        "annotate"
+      ]
+    },
+    {
+      "element_id": "e_s4_tangent",
+      "slide_id": "s004",
+      "type": "text",
+      "content": "切线的斜率 = 该点的导数。",
+      "bbox": {
+        "x": 0.38,
+        "y": 0.537,
+        "width": 0.24,
+        "height": 0.352
+      },
+      "source": "manual_from_parser",
+      "evidence_hint": "导数几何意义",
+      "allowed_action_affordance": [
+        "highlight",
+        "annotate",
+        "zoom"
+      ]
+    },
+    {
+      "element_id": "e_s5_process",
+      "slide_id": "s005",
+      "type": "text",
+      "content": "分割、近似、求和、取极限。这个无限求和的极限过程，就是积分。",
+      "bbox": {
+        "x": 0.083,
+        "y": 0.63,
+        "width": 0.385,
+        "height": 0.278
+      },
+      "source": "manual_from_parser",
+      "evidence_hint": "积分构造过程",
+      "allowed_action_affordance": [
+        "step_reveal",
+        "highlight"
+      ]
+    },
+    {
+      "element_id": "e_s5_displacement",
+      "slide_id": "s005",
+      "type": "text",
+      "content": "速度函数 v(t) 下从 a 到 b 的面积，就是这段时间内的总位移。",
+      "bbox": {
+        "x": 0.531,
+        "y": 0.63,
+        "width": 0.385,
+        "height": 0.259
+      },
+      "source": "manual_from_parser",
+      "evidence_hint": "积分物理意义",
+      "allowed_action_affordance": [
+        "highlight",
+        "annotate"
+      ]
+    },
+    {
+      "element_id": "e_s6_core",
+      "slide_id": "s006",
+      "type": "formula",
+      "content": "微分和积分是互逆运算。若 F'(x)=f(x)，则 ∫f(x)dx = F(x)+C。",
+      "bbox": {
+        "x": 0.146,
+        "y": 0.213,
+        "width": 0.771,
+        "height": 0.167
+      },
+      "source": "manual_from_parser",
+      "evidence_hint": "基本定理核心公式与结论",
+      "allowed_action_affordance": [
+        "highlight",
+        "annotate",
+        "zoom"
+      ]
+    },
+    {
+      "element_id": "e_s6_quote",
+      "slide_id": "s006",
+      "type": "text",
+      "content": "变化率的累积，等于总变化量。",
+      "bbox": {
+        "x": 0.063,
+        "y": 0.787,
+        "width": 0.875,
+        "height": 0.111
+      },
+      "source": "manual_from_parser",
+      "evidence_hint": "总结句",
+      "allowed_action_affordance": [
+        "highlight",
+        "annotate"
+      ]
+    }
+  ],
+  "generation_tasks": [
+    "generate_course",
+    "generate_slides",
+    "generate_knowledge_nodes",
+    "generate_knowledge_relations",
+    "generate_teaching_candidates"
+  ],
+  "constraints": [
+    "Do not claim access to the original PPTX file.",
+    "Do not treat teacher_note as slide text.",
+    "Use only schema_version 0.1 fields.",
+    "Every major claim must include evidence or source_ref.",
+    "Use confidence as a number from 0 to 1.",
+    "Set needs_review to true when evidence is weak, inferred, or teacher-note-only.",
+    "Use GUI action affordance only from known_elements.allowed_action_affordance."
+  ],
+  "metadata": {
+    "created_for": "2026-06-06-llm-assisted-courseware-structure-generation",
+    "upstream_reference": "../2026-06-05-llm-vlm-courseware-structure-output/courseware_structure.sample.json",
+    "review_status": "sample_input_not_final_annotation"
+  }
+}

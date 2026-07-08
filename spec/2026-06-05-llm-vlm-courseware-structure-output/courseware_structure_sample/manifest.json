@@ -1,0 +1,25 @@
+﻿{
+    "schema_version":  "0.1",
+    "package_type":  "courseware_structure_split_sample",
+    "course_id":  "calculus_intro_001",
+    "title":  "微积分入门教学",
+    "source_file":  "微积分入门教学.pptx",
+    "selected_slide_range":  "slides 2-6",
+    "files":  {
+                  "course":  "course.json",
+                  "slides":  "slides.json",
+                  "elements":  "elements.json",
+                  "knowledge_nodes":  "knowledge_nodes.json",
+                  "knowledge_relations":  "knowledge_relations.json",
+                  "teaching_candidates":  "teaching_candidates.json",
+                  "metadata":  "metadata.json"
+              },
+    "counts":  {
+                   "slides":  5,
+                   "elements":  10,
+                   "knowledge_nodes":  9,
+                   "knowledge_relations":  9,
+                   "teaching_candidates":  5
+               },
+    "rationale":  "Split files are intended for staged LLM/VLM generation, independent review, and partial regeneration of page, element, knowledge, relation, and teaching-candidate layers."
+}

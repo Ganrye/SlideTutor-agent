@@ -1,0 +1,239 @@
+{
+  "lesson_id": "calculus_intro_demo",
+  "title": "微积分入门教学",
+  "source_file": "微积分入门教学.pptx",
+  "source_status": "placeholder",
+  "canvas": {
+    "width": 1280,
+    "height": 720
+  },
+  "slides": [
+    {
+      "id": "slide_1",
+      "title": "从变化率开始理解微积分",
+      "image": "/slides/calculus-intro/slide-1.svg",
+      "width": 1280,
+      "height": 720,
+      "elements": [
+        {
+          "id": "s1_title",
+          "type": "title",
+          "text": "从变化率开始理解微积分",
+          "bbox": { "x": 86, "y": 64, "w": 720, "h": 86 }
+        },
+        {
+          "id": "s1_average_rate",
+          "type": "formula",
+          "text": "平均变化率 = Δy / Δx",
+          "bbox": { "x": 118, "y": 260, "w": 430, "h": 74 }
+        },
+        {
+          "id": "s1_curve",
+          "type": "diagram",
+          "text": "函数曲线和两点割线",
+          "bbox": { "x": 720, "y": 184, "w": 420, "h": 320 }
+        }
+      ]
+    },
+    {
+      "id": "slide_2",
+      "title": "极限：让间隔越来越小",
+      "image": "/slides/calculus-intro/slide-2.svg",
+      "width": 1280,
+      "height": 720,
+      "elements": [
+        {
+          "id": "s2_title",
+          "type": "title",
+          "text": "极限：让间隔越来越小",
+          "bbox": { "x": 86, "y": 64, "w": 650, "h": 86 }
+        },
+        {
+          "id": "s2_limit_formula",
+          "type": "formula",
+          "text": "lim Δx→0 Δy / Δx",
+          "bbox": { "x": 108, "y": 284, "w": 480, "h": 96 }
+        },
+        {
+          "id": "s2_tangent_zoom",
+          "type": "diagram",
+          "text": "割线趋近切线示意",
+          "bbox": { "x": 692, "y": 170, "w": 452, "h": 350 }
+        }
+      ]
+    },
+    {
+      "id": "slide_3",
+      "title": "导数：瞬时变化率",
+      "image": "/slides/calculus-intro/slide-3.svg",
+      "width": 1280,
+      "height": 720,
+      "elements": [
+        {
+          "id": "s3_title",
+          "type": "title",
+          "text": "导数：瞬时变化率",
+          "bbox": { "x": 86, "y": 64, "w": 610, "h": 86 }
+        },
+        {
+          "id": "s3_derivative_formula",
+          "type": "formula",
+          "text": "f'(x) = lim h→0 [f(x+h)-f(x)] / h",
+          "bbox": { "x": 90, "y": 244, "w": 760, "h": 96 }
+        },
+        {
+          "id": "s3_tangent_meaning",
+          "type": "text",
+          "text": "导数就是曲线在某一点的切线斜率",
+          "bbox": { "x": 116, "y": 410, "w": 640, "h": 70 }
+        }
+      ]
+    }
+  ],
+  "knowledge_nodes": [
+    {
+      "id": "kn_average_rate",
+      "title": "平均变化率",
+      "slide_id": "slide_1",
+      "element_ids": ["s1_average_rate"]
+    },
+    {
+      "id": "kn_limit",
+      "title": "极限",
+      "slide_id": "slide_2",
+      "element_ids": ["s2_limit_formula"]
+    },
+    {
+      "id": "kn_derivative",
+      "title": "导数",
+      "slide_id": "slide_3",
+      "element_ids": ["s3_derivative_formula", "s3_tangent_meaning"]
+    }
+  ],
+  "teaching_steps": [
+    {
+      "id": "step_1",
+      "type": "explain",
+      "title": "从平均变化率进入",
+      "speech": "我们先用平均变化率理解变化：当 x 改变 Δx 时，y 改变 Δy，二者的比值描述整体变化速度。平均变化率",
+      "actions": [
+        {
+          "type": "highlight",
+          "slide_id": "slide_1",
+          "target_element_id": "s1_average_rate",
+          "label": "平均变化率"
+        }
+      ]
+    },
+    {
+      "id": "step_2",
+      "type": "explain",
+      "title": "观察曲线上的割线",
+      "speech": "在图像上，平均变化率对应两点之间割线的斜率。我们关心的是：如果这两个点越来越接近，会发生什么？",
+      "actions": [
+        {
+          "type": "highlight",
+          "slide_id": "slide_1",
+          "target_element_id": "s1_curve",
+          "label": "割线"
+        }
+      ]
+    },
+    {
+      "id": "step_3",
+      "type": "question",
+      "title": "遮罩回忆测试",
+      "speech": "现在遮住平均变化率公式，先主动回忆：变化率本质上比较的是哪两个量？",
+      "actions": [
+        {
+          "type": "mask",
+          "slide_id": "slide_1",
+          "target_element_id": "s1_average_rate",
+          "label": "先回忆"
+        },
+        {
+          "type": "question_popup",
+          "question_id": "q_rate"
+        }
+      ]
+    },
+    {
+      "id": "step_4",
+      "type": "review",
+      "title": "回顾极限的作用",
+      "speech": "如果回答不稳，我们回到极限：极限让 Δx 越来越小，从平均变化率过渡到瞬时变化率。极限",
+      "actions": [
+        {
+          "type": "jump",
+          "target_slide_id": "slide_2",
+          "reason": "回顾从平均变化率到瞬时变化率的前置概念"
+        },
+        {
+          "type": "highlight",
+          "slide_id": "slide_2",
+          "target_element_id": "s2_limit_formula",
+          "label": "Δx → 0"
+        }
+      ]
+    },
+    {
+      "id": "step_5",
+      "type": "explain",
+      "title": "导数的定义",
+      "speech": "导数就是当间隔趋近于 0 时得到的瞬时变化率，也可以理解为曲线在某一点的切线斜率。导数",
+      "actions": [
+        {
+          "type": "jump",
+          "target_slide_id": "slide_3",
+          "reason": "进入导数定义"
+        },
+        {
+          "type": "highlight",
+          "slide_id": "slide_3",
+          "target_element_id": "s3_derivative_formula",
+          "label": "导数定义"
+        }
+      ]
+    },
+    {
+      "id": "step_6",
+      "type": "summary",
+      "title": "学习总结",
+      "speech": "本轮学习串起了平均变化率、极限和导数：平均变化率描述整体变化，极限让间隔趋近于 0，导数描述瞬时变化率。",
+      "actions": [
+        {
+          "type": "feedback",
+          "feedback_id": "summary"
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "id": "q_rate",
+      "type": "single_choice",
+      "prompt": "平均变化率主要表示什么？",
+      "options": [
+        {
+          "id": "a",
+          "text": "函数值变化量与自变量变化量的比值"
+        },
+        {
+          "id": "b",
+          "text": "函数图像的最高点"
+        },
+        {
+          "id": "c",
+          "text": "某一点的纵坐标"
+        }
+      ],
+      "answer": "a",
+      "feedback": {
+        "correct": "正确。平均变化率就是 Δy 与 Δx 的比值。",
+        "incorrect": "还不稳。我们回顾极限如何把平均变化率推向瞬时变化率。"
+      },
+      "next_step_id": "step_5",
+      "review_step_id": "step_4"
+    }
+  ]
+}

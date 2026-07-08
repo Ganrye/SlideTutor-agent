@@ -1,0 +1,378 @@
+﻿[
+    {
+        "candidate_id":  "tc001",
+        "target_concept":  "k_change",
+        "target_slide":  "s002",
+        "target_elements":  [
+                                "e_s2_core",
+                                "e_s2_questions"
+                            ],
+        "explanation_goal":  "让学生抓住微积分的两个核心问题。",
+        "suggested_question":  {
+                                   "question_type":  "short_answer",
+                                   "prompt":  "微积分主要研究哪两类问题？",
+                                   "options":  [
+
+                                               ],
+                                   "expected_answer":  "变化有多快，以及变化累积了多少。",
+                                   "rationale":  "检查整体定位。"
+                               },
+        "suggested_gui_actions":  [
+                                      {
+                                          "action_type":  "highlight",
+                                          "target_slide":  "s002",
+                                          "target_elements":  [
+                                                                  "e_s2_core"
+                                                              ],
+                                          "pedagogical_purpose":  "突出定义",
+                                          "priority":  "high"
+                                      },
+                                      {
+                                          "action_type":  "step_reveal",
+                                          "target_slide":  "s002",
+                                          "target_elements":  [
+                                                                  "e_s2_questions"
+                                                              ],
+                                          "pedagogical_purpose":  "分步展示两个核心问题",
+                                          "priority":  "high"
+                                      }
+                                  ],
+        "feedback_strategy":  {
+                                  "correct_response":  "可以进入两大分支。",
+                                  "incorrect_response":  "回到核心问题：一个问速度，一个问总量。",
+                                  "hint":  "看页面右侧的两个问题。"
+                              },
+        "review_strategy":  {
+                                "trigger":  "wrong_answer",
+                                "review_concepts":  [
+                                                        "k_change"
+                                                    ],
+                                "review_slides":  [
+                                                      "s002"
+                                                  ],
+                                "review_elements":  [
+                                                        "e_s2_core",
+                                                        "e_s2_questions"
+                                                    ],
+                                "reason":  "整体定位未建立。"
+                            },
+        "source_ref":  {
+                           "source_file":  "微积分入门教学.pptx",
+                           "slide_id":  "s002",
+                           "slide_index":  2,
+                           "element_id":  "e_s2_questions",
+                           "page_region":  "middle_right"
+                       },
+        "evidence":  [
+                         {
+                             "type":  "text",
+                             "source_id":  "e_s2_questions",
+                             "quote":  "变化有多快？变化累积了多少？",
+                             "note":  "问题依据"
+                         }
+                     ],
+        "confidence":  0.92,
+        "needs_review":  false
+    },
+    {
+        "candidate_id":  "tc002",
+        "target_concept":  "k_differential",
+        "target_slide":  "s003",
+        "target_elements":  [
+                                "e_s3_diff",
+                                "e_s3_integral"
+                            ],
+        "explanation_goal":  "比较微分学和积分学。",
+        "suggested_question":  {
+                                   "question_type":  "multiple_choice",
+                                   "prompt":  "“函数的局部变化率”对应哪一分支？",
+                                   "options":  [
+                                                   "微分学",
+                                                   "积分学",
+                                                   "概率论",
+                                                   "线性代数"
+                                               ],
+                                   "expected_answer":  "微分学",
+                                   "rationale":  "检查分支区分。"
+                               },
+        "suggested_gui_actions":  [
+                                      {
+                                          "action_type":  "compare",
+                                          "target_slide":  "s003",
+                                          "target_elements":  [
+                                                                  "e_s3_diff",
+                                                                  "e_s3_integral"
+                                                              ],
+                                          "pedagogical_purpose":  "并列比较两个分支",
+                                          "priority":  "high"
+                                      },
+                                      {
+                                          "action_type":  "mask",
+                                          "target_slide":  "s003",
+                                          "target_elements":  [
+                                                                  "e_s3_integral"
+                                                              ],
+                                          "pedagogical_purpose":  "先讲微分再揭示积分",
+                                          "priority":  "medium"
+                                      }
+                                  ],
+        "feedback_strategy":  {
+                                  "correct_response":  "正确，微分学关注局部变化率。",
+                                  "incorrect_response":  "局部变化率对应微分，累积效应对应积分。",
+                                  "hint":  "看左栏研究对象。"
+                              },
+        "review_strategy":  {
+                                "trigger":  "wrong_answer",
+                                "review_concepts":  [
+                                                        "k_differential",
+                                                        "k_integral"
+                                                    ],
+                                "review_slides":  [
+                                                      "s003"
+                                                  ],
+                                "review_elements":  [
+                                                        "e_s3_diff",
+                                                        "e_s3_integral"
+                                                    ],
+                                "reason":  "混淆两大分支。"
+                            },
+        "source_ref":  {
+                           "source_file":  "微积分入门教学.pptx",
+                           "slide_id":  "s003",
+                           "slide_index":  3,
+                           "element_id":  "e_s3_diff",
+                           "page_region":  "left_body"
+                       },
+        "evidence":  [
+                         {
+                             "type":  "text",
+                             "source_id":  "e_s3_diff",
+                             "quote":  "函数的局部变化率",
+                             "note":  "问题依据"
+                         }
+                     ],
+        "confidence":  0.92,
+        "needs_review":  false
+    },
+    {
+        "candidate_id":  "tc003",
+        "target_concept":  "k_derivative",
+        "target_slide":  "s004",
+        "target_elements":  [
+                                "e_s4_derivative",
+                                "e_s4_tangent"
+                            ],
+        "explanation_goal":  "从瞬时变化率和切线斜率理解导数。",
+        "suggested_question":  {
+                                   "question_type":  "short_answer",
+                                   "prompt":  "导数在几何上可以理解为什么？",
+                                   "options":  [
+
+                                               ],
+                                   "expected_answer":  "曲线在某一点的切线斜率。",
+                                   "rationale":  "检查导数几何意义。"
+                               },
+        "suggested_gui_actions":  [
+                                      {
+                                          "action_type":  "highlight",
+                                          "target_slide":  "s004",
+                                          "target_elements":  [
+                                                                  "e_s4_derivative"
+                                                              ],
+                                          "pedagogical_purpose":  "突出导数定义",
+                                          "priority":  "high"
+                                      },
+                                      {
+                                          "action_type":  "annotate",
+                                          "target_slide":  "s004",
+                                          "target_elements":  [
+                                                                  "e_s4_tangent"
+                                                              ],
+                                          "pedagogical_purpose":  "标注切线斜率",
+                                          "priority":  "high"
+                                      }
+                                  ],
+        "feedback_strategy":  {
+                                  "correct_response":  "正确，切线斜率是导数的几何意义。",
+                                  "incorrect_response":  "先回顾割线趋近切线。",
+                                  "hint":  "看中间区域的切线斜率。"
+                              },
+        "review_strategy":  {
+                                "trigger":  "wrong_answer",
+                                "review_concepts":  [
+                                                        "k_derivative",
+                                                        "k_tangent_slope"
+                                                    ],
+                                "review_slides":  [
+                                                      "s004"
+                                                  ],
+                                "review_elements":  [
+                                                        "e_s4_derivative",
+                                                        "e_s4_tangent"
+                                                    ],
+                                "reason":  "导数几何意义不稳。"
+                            },
+        "source_ref":  {
+                           "source_file":  "微积分入门教学.pptx",
+                           "slide_id":  "s004",
+                           "slide_index":  4,
+                           "element_id":  "e_s4_tangent",
+                           "page_region":  "middle_body"
+                       },
+        "evidence":  [
+                         {
+                             "type":  "text",
+                             "source_id":  "e_s4_tangent",
+                             "quote":  "切线的斜率 = 该点的导数",
+                             "note":  "问题依据"
+                         }
+                     ],
+        "confidence":  0.93,
+        "needs_review":  false
+    },
+    {
+        "candidate_id":  "tc004",
+        "target_concept":  "k_limit_sum",
+        "target_slide":  "s005",
+        "target_elements":  [
+                                "e_s5_process"
+                            ],
+        "explanation_goal":  "理解积分是无限求和的极限过程。",
+        "suggested_question":  {
+                                   "question_type":  "fill_blank",
+                                   "prompt":  "积分的直观过程：分割、近似、求和、____。",
+                                   "options":  [
+
+                                               ],
+                                   "expected_answer":  "取极限",
+                                   "rationale":  "检查积分过程。"
+                               },
+        "suggested_gui_actions":  [
+                                      {
+                                          "action_type":  "step_reveal",
+                                          "target_slide":  "s005",
+                                          "target_elements":  [
+                                                                  "e_s5_process"
+                                                              ],
+                                          "pedagogical_purpose":  "分步展示积分构造",
+                                          "priority":  "high"
+                                      }
+                                  ],
+        "feedback_strategy":  {
+                                  "correct_response":  "正确，取极限让近似求和变成积分。",
+                                  "incorrect_response":  "最后一步不是普通求和，而是取极限。",
+                                  "hint":  "看左侧过程。"
+                              },
+        "review_strategy":  {
+                                "trigger":  "wrong_answer",
+                                "review_concepts":  [
+                                                        "k_integral",
+                                                        "k_limit_sum"
+                                                    ],
+                                "review_slides":  [
+                                                      "s005"
+                                                  ],
+                                "review_elements":  [
+                                                        "e_s5_process"
+                                                    ],
+                                "reason":  "漏掉取极限会导致积分理解不完整。"
+                            },
+        "source_ref":  {
+                           "source_file":  "微积分入门教学.pptx",
+                           "slide_id":  "s005",
+                           "slide_index":  5,
+                           "element_id":  "e_s5_process",
+                           "page_region":  "left_body"
+                       },
+        "evidence":  [
+                         {
+                             "type":  "text",
+                             "source_id":  "e_s5_process",
+                             "quote":  "分割、近似、求和、取极限",
+                             "note":  "问题依据"
+                         }
+                     ],
+        "confidence":  0.93,
+        "needs_review":  false
+    },
+    {
+        "candidate_id":  "tc005",
+        "target_concept":  "k_fundamental_theorem",
+        "target_slide":  "s006",
+        "target_elements":  [
+                                "e_s6_core",
+                                "e_s6_quote"
+                            ],
+        "explanation_goal":  "把导数和积分统一为互逆关系。",
+        "suggested_question":  {
+                                   "question_type":  "true_false",
+                                   "prompt":  "微积分基本定理说明微分和积分之间存在互逆关系。",
+                                   "options":  [
+
+                                               ],
+                                   "expected_answer":  "true",
+                                   "rationale":  "检查基本定理核心思想。"
+                               },
+        "suggested_gui_actions":  [
+                                      {
+                                          "action_type":  "highlight",
+                                          "target_slide":  "s006",
+                                          "target_elements":  [
+                                                                  "e_s6_core"
+                                                              ],
+                                          "pedagogical_purpose":  "突出互逆运算",
+                                          "priority":  "high"
+                                      },
+                                      {
+                                          "action_type":  "highlight",
+                                          "target_slide":  "s006",
+                                          "target_elements":  [
+                                                                  "e_s6_quote"
+                                                              ],
+                                          "pedagogical_purpose":  "用总结句收束",
+                                          "priority":  "medium"
+                                      }
+                                  ],
+        "feedback_strategy":  {
+                                  "correct_response":  "正确，基本定理连接微分和积分。",
+                                  "incorrect_response":  "先回顾导数刻画瞬时变化率，积分刻画累积总量。",
+                                  "hint":  "看顶部互逆运算和底部总结句。"
+                              },
+        "review_strategy":  {
+                                "trigger":  "wrong_answer",
+                                "review_concepts":  [
+                                                        "k_derivative",
+                                                        "k_integral",
+                                                        "k_inverse_relation"
+                                                    ],
+                                "review_slides":  [
+                                                      "s004",
+                                                      "s005",
+                                                      "s006"
+                                                  ],
+                                "review_elements":  [
+                                                        "e_s4_derivative",
+                                                        "e_s5_process",
+                                                        "e_s6_core"
+                                                    ],
+                                "reason":  "基本定理依赖导数和积分两个前置直觉。"
+                            },
+        "source_ref":  {
+                           "source_file":  "微积分入门教学.pptx",
+                           "slide_id":  "s006",
+                           "slide_index":  6,
+                           "element_id":  "e_s6_core",
+                           "page_region":  "upper_middle"
+                       },
+        "evidence":  [
+                         {
+                             "type":  "text",
+                             "source_id":  "e_s6_core",
+                             "quote":  "微分和积分是互逆运算",
+                             "note":  "问题依据"
+                         }
+                     ],
+        "confidence":  0.91,
+        "needs_review":  false
+    }
+]

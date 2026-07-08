@@ -1,0 +1,76 @@
+﻿{
+    "course_id":  "calculus_intro_001",
+    "title":  "微积分入门教学",
+    "source_file":  "微积分入门教学.pptx",
+    "source_type":  "pptx",
+    "topic":  "微积分的核心思想：变化、微分、积分与微积分基本定理",
+    "audience":  "微积分初学者或自学者",
+    "learning_objectives":  [
+                                "理解微积分研究变化与累积的基本问题",
+                                "区分微分学和积分学的研究对象",
+                                "用导数解释瞬时变化率和切线斜率",
+                                "用积分解释无限求和和累积总量",
+                                "理解微积分基本定理连接微分与积分"
+                            ],
+    "prerequisites":  [
+                          "函数",
+                          "平均速度",
+                          "斜率",
+                          "面积",
+                          "求和"
+                      ],
+    "module_structure":  [
+                             {
+                                 "module_id":  "m001",
+                                 "title":  "整体定位",
+                                 "slide_ids":  [
+                                                   "s002",
+                                                   "s003"
+                                               ],
+                                 "purpose":  "建立微积分研究变化与累积的双主线。"
+                             },
+                             {
+                                 "module_id":  "m002",
+                                 "title":  "微分与导数",
+                                 "slide_ids":  [
+                                                   "s004"
+                                               ],
+                                 "purpose":  "解释瞬时变化率和切线斜率。"
+                             },
+                             {
+                                 "module_id":  "m003",
+                                 "title":  "积分与累积",
+                                 "slide_ids":  [
+                                                   "s005"
+                                               ],
+                                 "purpose":  "解释分割、近似、求和、取极限。"
+                             },
+                             {
+                                 "module_id":  "m004",
+                                 "title":  "基本定理",
+                                 "slide_ids":  [
+                                                   "s006"
+                                               ],
+                                 "purpose":  "连接微分与积分。"
+                             }
+                         ],
+    "key_concepts":  [
+                         "k_change",
+                         "k_differential",
+                         "k_derivative",
+                         "k_integral",
+                         "k_limit_sum",
+                         "k_fundamental_theorem"
+                     ],
+    "narrative_flow":  "先定义微积分是研究变化的科学，再拆成微分和积分两条主线，随后分别解释导数与积分，最后用基本定理说明二者互逆。",
+    "summary":  "第 2-6 页构成一个完整入门链条：变化 -\u003e 两大分支 -\u003e 导数 -\u003e 积分 -\u003e 基本定理。",
+    "source_ref":  {
+                       "source_file":  "微积分入门教学.pptx",
+                       "slide_id":  null,
+                       "slide_index":  null,
+                       "element_id":  null,
+                       "page_region":  "slides_2_to_6"
+                   },
+    "confidence":  0.88,
+    "needs_review":  false
+}

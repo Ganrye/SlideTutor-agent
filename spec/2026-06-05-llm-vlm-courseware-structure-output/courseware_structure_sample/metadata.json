@@ -1,0 +1,16 @@
+﻿{
+    "created_by":  "manual_annotation_with_openxml_and_mineru_check",
+    "created_at":  "2026-06-06",
+    "source_pptx_path":  "C:\\Users\\13362\\Desktop\\slidetutor\\微积分入门教学.pptx",
+    "selected_slide_range":  "slides 2-6",
+    "slide_size_emu":  {
+                           "width":  12192000,
+                           "height":  6858000
+                       },
+    "input_modes":  [
+                        "pptx_openxml_text_and_bbox",
+                        "mineru_markdown_check"
+                    ],
+    "mineru_output_markdown":  "C:\\Users\\13362\\Desktop\\slidetutor\\微积分入门教学_mineru_work\\微积分入门教学\\office\\微积分入门教学.md",
+    "notes":  "Bboxes are normalized from PPTX EMU coordinates and rounded to three decimals. Picture contents are not semantically analyzed in this sample; text shapes provide the main evidence."
+}
