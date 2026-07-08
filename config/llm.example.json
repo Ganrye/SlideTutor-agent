@@ -1,0 +1,5 @@
+{
+  "api_base": "https://your-api-host.example/v1",
+  "api_key": "replace-with-your-api-key",
+  "model": "DeepSeek-V3-64K"
+}

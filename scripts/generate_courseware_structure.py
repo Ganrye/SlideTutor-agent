@@ -48,11 +48,26 @@ TASK_OUTPUT_FILES = {
     "generate_teaching_candidates": ("teaching_candidates", "teaching_candidates.json"),
 }
 
+ALLOWED_RELATION_TYPES = {
+    "prerequisite_of",
+    "part_of",
+    "explains",
+    "example_of",
+    "contrasts_with",
+    "derives_to",
+    "applies_to",
+    "summarizes",
+    "review_target_for",
+}
+
 TASK_PROMPTS = {
     "generate_course": """Generate the course layer JSON object.
 Required fields: course_id, title, source_file, source_type, topic, audience,
 learning_objectives, prerequisites, module_structure, key_concepts,
 narrative_flow, summary, source_ref, confidence, needs_review.
+learning_objectives MUST be a non-empty JSON array of 3-6 concrete,
+student-facing objectives (what the learner should be able to do). Never
+return an empty learning_objectives array.
 module_structure MUST be a JSON array, not an object. Each module item must
 include module_id, title, slide_ids, purpose. Use slide_ids, not slides.
 Only use the input package. Do not claim access to the original PPT/PDF.""",
@@ -69,12 +84,18 @@ Do not turn every sentence into a node.""",
     "generate_knowledge_relations": """Generate knowledge_relations as a JSON array.
 Each item must include: relation_id, source_id, target_id, relation_type,
 description, source_slides, source_elements, evidence, confidence, needs_review.
-source_id and target_id must reference existing knowledge node IDs.""",
+source_id and target_id must reference existing knowledge node IDs.
+relation_type MUST be exactly one of: prerequisite_of, part_of, explains,
+example_of, contrasts_with, derives_to, applies_to, summarizes,
+review_target_for. Do not invent other relation types.""",
     "generate_teaching_candidates": """Generate teaching_candidates as a JSON array.
 Each item must include: candidate_id, target_concept, target_slide,
 target_elements, explanation_goal, suggested_question, suggested_gui_actions,
 feedback_strategy, review_strategy, source_ref, evidence, confidence,
-needs_review. GUI action types must come from allowed_action_affordance.""",
+needs_review. GUI action types must come from allowed_action_affordance.
+target_concept MUST be an existing knowledge node_id from previous_outputs
+(e.g. "kn_003"), NOT the node title text. target_slide MUST be a known
+slide_id and target_elements MUST be known element_ids.""",
 }
 
 
@@ -225,6 +246,9 @@ def validate_layer(
             report,
         )
         validate_scalar_fields(data, "course", report)
+        objectives = data.get("learning_objectives")
+        if not isinstance(objectives, list) or not [o for o in objectives if str(o).strip()]:
+            report.error("course.learning_objectives: must be a non-empty list")
         for module in ensure_list(data.get("module_structure", []), "course.module_structure", report):
             if not isinstance(module, dict):
                 report.error("course.module_structure[]: expected object")
@@ -347,6 +371,12 @@ def validate_layer(
             if relation_id in seen_relation_ids:
                 report.error(f"{where}: duplicate relation_id '{relation_id}'")
             seen_relation_ids.add(relation_id)
+            relation_type = relation.get("relation_type")
+            if relation_type not in ALLOWED_RELATION_TYPES:
+                report.error(
+                    f"{where}: invalid relation_type '{relation_type}' "
+                    f"(allowed: {', '.join(sorted(ALLOWED_RELATION_TYPES))})"
+                )
             for key in ("source_id", "target_id"):
                 if relation.get(key) not in node_ids:
                     report.error(f"{where}: unknown {key} '{relation.get(key)}'")
@@ -428,6 +458,8 @@ def call_openai_compatible(
     messages: list[dict[str, str]],
     temperature: float,
     timeout: int,
+    max_retries: int = 0,
+    retry_backoff: float = 65.0,
 ) -> tuple[str, dict[str, Any]]:
     url = api_base.rstrip("/")
     if not url.endswith("/chat/completions"):
@@ -449,18 +481,41 @@ def call_openai_compatible(
         method="POST",
     )
     started = time.time()
-    try:
-        with request.urlopen(req, timeout=timeout) as resp:
-            response_payload = json.loads(resp.read().decode("utf-8"))
-    except error.HTTPError as exc:
-        detail = exc.read().decode("utf-8", errors="replace")
-        raise RuntimeError(f"API HTTP {exc.code}: {detail}") from exc
-    except (TimeoutError, socket.timeout, http.client.RemoteDisconnected, error.URLError) as exc:
-        raise RuntimeError(
-            f"API connection failed before a complete response was received: {exc}. "
-            "For this endpoint/model, try increasing --timeout, running fewer --tasks, "
-            "or checking proxy/API service stability."
-        ) from exc
+    attempt = 0
+    while True:
+        try:
+            with request.urlopen(req, timeout=timeout) as resp:
+                response_payload = json.loads(resp.read().decode("utf-8"))
+            break
+        except error.HTTPError as exc:
+            detail = exc.read().decode("utf-8", errors="replace")
+            if exc.code == 429 and attempt < max_retries:
+                attempt += 1
+                wait = retry_backoff * attempt
+                print(
+                    f"[{utc_now_text()}] Rate limited (429); waiting {wait:.0f}s "
+                    f"then retry {attempt}/{max_retries}",
+                    flush=True,
+                )
+                time.sleep(wait)
+                continue
+            raise RuntimeError(f"API HTTP {exc.code}: {detail}") from exc
+        except (TimeoutError, socket.timeout, http.client.RemoteDisconnected, error.URLError) as exc:
+            if attempt < max_retries:
+                attempt += 1
+                wait = min(retry_backoff, 20.0) * attempt
+                print(
+                    f"[{utc_now_text()}] Connection issue ({exc}); waiting {wait:.0f}s "
+                    f"then retry {attempt}/{max_retries}",
+                    flush=True,
+                )
+                time.sleep(wait)
+                continue
+            raise RuntimeError(
+                f"API connection failed before a complete response was received: {exc}. "
+                "For this endpoint/model, try increasing --timeout, running fewer --tasks, "
+                "or checking proxy/API service stability."
+            ) from exc
     elapsed_ms = int((time.time() - started) * 1000)
     try:
         content = response_payload["choices"][0]["message"]["content"]
@@ -669,6 +724,15 @@ def run(args: argparse.Namespace) -> int:
     reports: dict[str, ValidationReport] = {}
     usage_log: list[dict[str, Any]] = []
 
+    if args.reuse_validated:
+        for other_task, (key, file_name) in TASK_OUTPUT_FILES.items():
+            if other_task in tasks:
+                continue
+            existing = validated_dir / file_name
+            if existing.exists():
+                outputs[key] = read_json(existing)
+                log(f"Reusing validated output for {other_task}: {existing}", args.quiet)
+
     for task in tasks:
         key, file_name = TASK_OUTPUT_FILES[task]
         log(f"Starting task: {task}", args.quiet)
@@ -689,6 +753,8 @@ def run(args: argparse.Namespace) -> int:
                 messages=messages,
                 temperature=args.temperature,
                 timeout=args.timeout,
+                max_retries=args.max_retries,
+                retry_backoff=args.retry_backoff,
             )
             log(f"Received LLM response for {task}; response_chars={len(raw_text)}", args.quiet)
             data = parse_json_from_model(raw_text)
@@ -760,7 +826,24 @@ def parse_args(argv: list[str]) -> argparse.Namespace:
     parser.add_argument("--api-key-env", default="SLIDETUTOR_LLM_API_KEY")
     parser.add_argument("--temperature", type=float, default=0.2)
     parser.add_argument("--timeout", type=int, default=120)
+    parser.add_argument(
+        "--max-retries",
+        type=int,
+        default=5,
+        help="Retries on HTTP 429 (per-minute token limit). 0 disables.",
+    )
+    parser.add_argument(
+        "--retry-backoff",
+        type=float,
+        default=65.0,
+        help="Base seconds to wait per 429 retry. Default 65s to clear a per-minute window.",
+    )
     parser.add_argument("--keep-invalid", action="store_true")
+    parser.add_argument(
+        "--reuse-validated",
+        action="store_true",
+        help="Seed previous_outputs from existing validated_outputs so you can re-run only some tasks.",
+    )
     parser.add_argument("--quiet", action="store_true", help="Suppress progress logs.")
     parser.add_argument(
         "--smoke-test",
